@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FIDÈLE — Tema Escuro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Titan+One&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="bg-field" id="bgField"></div>
+
+  <header>
+    <div class="nav-row">
+      <div class="brand">
+        <div class="badge"><div class="badge-inner"><span>FDL</span></div></div>
+        <div class="brand-name">
+          <img src="Fidele-logocabecalho.png" alt="FIDÈLE">
+        </div>
+      </div>
+      <nav class="links">
+        <a href="#">Tops</a>
+        <a href="#">Tanks</a>
+        <a href="#">Bags</a>
+        <a href="#">Lançamentos</a>
+        <a href="#">Sobre</a>
+      </nav>
+      <div class="nav-icons">
+        <div class="icon-btn burger">☰</div>
+        <div class="icon-btn">🔎</div>
+        <div class="icon-btn cart" onclick="toggleCart()">🛍<span class="cart-count">2</span></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-cover">
+          <!-- Nome da imagem da capa aqui -->
+          <img src="capa.jpg" alt="Equipe Fidèle">
+        </div>
+        <p class="hero-sub">Seja leal a você mesma. Esqueça as regras — se você gosta, use!</p>
+        <div class="cta-row">
+          <button class="btn btn-primary">Ver coleção</button>
+          <button class="btn btn-ghost">Lançamentos ↓</button>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust wrap">
+      <div><span class="dot"></span> Pix, Crédito e Parcelamento — sem sair do site</div>
+      <div><span class="dot"></span> Frete calculado pelo seu CEP</div>
+      <div><span class="dot"></span> Compra 100% segura</div>
+      <div><span class="dot"></span> Embalagem com cartão escrito à mão</div>
+    </div>
+
+    <div class="section-title"><h2>Mais <span>vendidas</span></h2><a href="#">ver tudo →</a></div>
+
+    <div class="grid">
+      <div class="card">
+        <div class="thumb"><span>FDL</span></div>
+        <div class="info">
+          <p class="name">Tank FDL Bordada</p>
+          <p class="price">R$ 89,90</p>
+          <div class="swatches"><div class="swatch" style="background:#0A0A0C"></div><div class="swatch" style="background:#EFE6D8"></div></div>
+          <button class="add">Adicionar</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="thumb"><span>FDL</span></div>
+        <div class="info">
+          <p class="name">Tote Bag Fidèle</p>
+          <p class="price">R$ 69,90</p>
+          <div class="swatches"><div class="swatch" style="background:#EFE6D8"></div></div>
+          <button class="add">Adicionar</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="thumb"><span>FDL</span></div>
+        <div class="info">
+          <p class="name">Camiseta Drip Pink</p>
+          <p class="price">R$ 94,90</p>
+          <div class="swatches"><div class="swatch" style="background:#0A0A0C"></div><div class="swatch" style="background:#FF1F8D"></div></div>
+          <button class="add">Adicionar</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="thumb"><span>FDL</span></div>
+        <div class="info">
+          <p class="name">Kit Presente Fidèle</p>
+          <p class="price">R$ 129,90</p>
+          <div class="swatches"><div class="swatch" style="background:#FF1F8D"></div></div>
+          <button class="add">Adicionar</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="cep-widget">
+      <div class="cep-box">
+        <div class="txt"><strong>Confira o frete pro seu CEP</strong><span>Calculamos prazo e valor antes de você finalizar a compra.</span></div>
+        <div>
+          <div class="cep-form">
+            <input id="cep-input" placeholder="00000-000" maxlength="9">
+            <button onclick="calcFrete()">Calcular</button>
+          </div>
+          <div id="cep-result"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">FIDÈLE</div>
+        <p style="font-size:13px;line-height:1.6;max-width:260px;opacity:.8;">Peças com atitude, embaladas com carinho. Seja leal a você mesma.</p>
+        <div class="newsletter"><input placeholder="seu@email.com"><button>Entrar</button></div>
+      </div>
+      <div>
+        <h4>Loja</h4>
+        <ul><li><a href="#">Tanks</a></li><li><a href="#">Camisetas</a></li><li><a href="#">Bags</a></li><li><a href="#">Lançamentos</a></li></ul>
+      </div>
+      <div>
+        <h4>Ajuda</h4>
+        <ul><li><a href="#">Trocas e devoluções</a></li><li><a href="#">Prazo de entrega</a></li><li><a href="#">Guia de tamanhos</a></li><li><a href="#">Fale conosco</a></li></ul>
+      </div>
+      <div>
+        <h4>Pagamento</h4>
+        <div class="pay-icons"><span>PIX</span><span>VISA</span><span>MASTER</span><span>ELO</span><span>3x sem juros</span></div>
+        <h4 style="margin-top:18px;">Segue a Fidèle</h4>
+        <div class="pay-icons"><span>@fideleoficial</span></div>
+      </div>
+    </div>
+    <div class="bottom-bar">© 2026 FIDÈLE — todos os direitos reservados</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
