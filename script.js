@@ -9,7 +9,10 @@ function buildField(){
     const h = document.body.scrollHeight;
     
     const area = w * h;
-    const count = Math.min(600, Math.max(100, Math.round(area / 12000)));
+    
+    // 1. AUMENTAMOS A DENSIDADE: O divisor caiu para 8000 e o mínimo subiu para 150.
+    // Isso garante que a tela fique mais preenchida, forçando várias logos no centro.
+    const count = Math.min(600, Math.max(150, Math.round(area / 8000)));
     
     for(let i=0; i<count; i++){
       const el = document.createElement('img');
@@ -20,7 +23,11 @@ function buildField(){
       const rot = (Math.random()*50 - 25).toFixed(1);
       const top = Math.random() * 100;
       const left = Math.random() * 100;
-      const op = (0.05 + Math.random() * 0.12).toFixed(2);
+      
+      // 2. AUMENTAMOS A OPACIDADE: Agora eles vão de 15% até 40% de visibilidade.
+      // Forte o suficiente para aparecer na foto, mas transparente o suficiente para não ofuscar.
+      const op = (0.15 + Math.random() * 0.25).toFixed(2);
+      
       const dur = (6 + Math.random() * 10).toFixed(1);
       const delay = (Math.random() * 6).toFixed(1);
       
