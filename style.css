@@ -34,7 +34,7 @@ a{color:inherit;text-decoration:none;}
   z-index: 2;
   transition: transform .4s ease-out;
 }
-}
+
 .bg-field img {
   position: absolute; will-change: transform;
   animation-name: floatFDL; animation-iteration-count: infinite;
@@ -222,3 +222,25 @@ footer{background:#060607;border-top:1px solid var(--line);margin-top:40px;}
 .pay-icons{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;}
 .pay-icons span{font-family:'Space Mono',monospace;font-size:10px;border:1px solid var(--line);border-radius:6px;padding:4px 8px;color:var(--cream);opacity:.8;}
 .bottom-bar{border-top:1px solid var(--line);padding:16px 24px;text-align:center;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.05em;opacity:.6;}
+
+/* ---------- TEMA CLARO ---------- */
+body.light-theme {
+  /* O fundo escuro vira gelo */
+  --bg: #FAFAFA;
+  --bg-elev: #FFFFFF;
+  --bg-elev-2: #F0F0F0;
+  /* O texto creme vira cinza escuro/preto */
+  --cream: #121212; 
+  /* As linhas divisórias ficam escuras */
+  --line: rgba(0, 0, 0, 0.1);
+}
+
+/* O cabeçalho precisa ficar translúcido claro */
+body.light-theme header {
+  background: rgba(250, 250, 250, 0.85);
+}
+
+/* Ajusta o rodapé para não ficar com blocos pretos perdidos */
+body.light-theme footer {
+  background: #F0F0F0;
+}

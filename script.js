@@ -75,3 +75,19 @@ function calcFrete(){
   
   out.textContent = 'Exemplo de retorno da API (Melhor Envio/Correios): 3 a 6 dias úteis · R$ 18,90';
 }
+
+/* ---------- Alternador de Tema (Modo Claro / Escuro) ---------- */
+function toggleTheme() {
+  const body = document.body;
+  const themeBtn = document.querySelector('.theme-toggle');
+  
+  // Liga ou desliga a classe light-theme no body
+  body.classList.toggle('light-theme');
+  
+  // Troca o ícone do botão
+  if (body.classList.contains('light-theme')) {
+    themeBtn.textContent = '🌙'; // Se estiver claro, mostra a lua
+  } else {
+    themeBtn.textContent = '☀️'; // Se estiver escuro, mostra o sol
+  }
+}
