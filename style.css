@@ -27,8 +27,13 @@ a{color:inherit;text-decoration:none;}
 /* ---------- BACKGROUND FDL FIELD ---------- */
 .bg-field {
   position: absolute; top: 0; left: 0; right: 0; bottom: 0; 
-  overflow: hidden; pointer-events: none; z-index: 0;
+  overflow: hidden; 
+  /* O pointer-events: none garante que mesmo passando por cima, eles não bloqueiem o clique nos botões! */
+  pointer-events: none; 
+  /* A mágica acontece aqui: trocamos de 0 para 2 */
+  z-index: 2;
   transition: transform .4s ease-out;
+}
 }
 .bg-field img {
   position: absolute; will-change: transform;
