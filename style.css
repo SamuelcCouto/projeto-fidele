@@ -103,12 +103,24 @@ nav.links a:hover{opacity:1;color:var(--pink-soft);}
 }
 .hero-inner{max-width:800px;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center;}
 
-.hero-cover{
-  width:100%;border-radius:16px;overflow:hidden;margin-bottom:24px;
-  border:1px solid var(--pink);box-shadow:var(--glow);
+.hero-cover {
+  width: 100%;
+  margin-bottom: 24px;
+  /* Removemos a borda e o brilho neon para tirar o aspecto de "quadro" */
+  border: none;
+  box-shadow: none;
 }
-.hero-cover img{
-  width:100%;height:auto;display:block;object-fit:cover;
+
+.hero-cover img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  /* Deixa a foto transparente para a chuva de logos aparecer (ajuste de 0.0 a 1.0) */
+  opacity: 0.45; 
+  /* Efeito premium: faz a parte de baixo da foto sumir em degradê para dentro do fundo escuro */
+  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
 }
 
 .hero-sub{font-family:'Caveat',cursive;font-size:26px;font-weight:700;color:var(--pink-soft);margin:0 0 26px;max-width:90%;}
