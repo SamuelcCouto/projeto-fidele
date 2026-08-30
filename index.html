@@ -38,41 +38,52 @@
       </div>
   </header>
 
- <main class="pdp-main">
-    
-    <!-- LADO ESQUERDO: Galeria de Imagens com Fundo Branco -->
-    <div class="product-gallery">
-      <div class="main-image-container">
-        <!-- Foto principal que aparece primeiro -->
-        <img id="mainImage" src="camisa-cinza-frente.jpg" alt="Camisa Exclusivist Frontal">
+<main>
+    <!-- O BANNER DAS MENINAS VOLTOU PRO TOPO! -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-cover">
+          <img src="capa.jpg" alt="Equipe Fidèle">
+        </div>
+        <p class="hero-sub">Seja leal a você mesma. Esqueça as regras — se você gosta, use!</p>
       </div>
-      
-      <!-- Miniaturas (Carrossel) -->
-      <div class="thumbnail-row">
-        <!-- Fotos Still (Fundo Branco) -->
-        <img class="thumb active" src="camisa-cinza-frente.jpg" onclick="changeImage(this, 'camisa-cinza-frente.jpg')" alt="Frente">
-        <img class="thumb" src="camisa-cinza-costas.jpg" onclick="changeImage(this, 'camisa-cinza-costas.jpg')" alt="Costas">
-        <img class="thumb" src="detalhe-gola.jpg" onclick="changeImage(this, 'detalhe-gola.jpg')" alt="Gola">
-        <img class="thumb" src="detalhe-bordado.jpg" onclick="changeImage(this, 'detalhe-bordado.jpg')" alt="Bordado">
-        <!-- Fotos Lifestyle (Modelos) -->
-        <img class="thumb" src="modelo-dupla.jpg" onclick="changeImage(this, 'modelo-dupla.jpg')" alt="Modelos">
-        <img class="thumb" src="modelo-cinza.jpg" onclick="changeImage(this, 'modelo-cinza.jpg')" alt="Modelo Cinza">
-        <img class="thumb" src="modelo-branca.jpg" onclick="changeImage(this, 'modelo-branca.jpg')" alt="Modelo Branca">
-      </div>
-    </div>
+    </section>
 
-    <!-- LADO DIREITO: Informações da Peça -->
-    <div class="product-info">
-      <h1 class="product-title">Camisa Cropped Exclusivist 1OF1</h1>
-      <p class="product-price">R$ 189,00</p>
-      
-      <div class="product-desc">
-        <p>A união perfeita entre o estilo streetwear e a versatilidade. Detalhes bordados exclusivos na gola e caimento estruturado.</p>
-        <p>Modelo veste tamanho M.</p>
-      </div>
-    </div>
+    <!-- NOVA SEÇÃO DO PRODUTO (PDP) LOGO ABAIXO -->
+    <section class="pdp-section">
+      <div class="pdp-main">
+        
+        <!-- LADO ESQUERDO: Galeria -->
+        <div class="product-gallery">
+          <div class="main-image-container">
+            <img id="mainImage" src="camisa-cinza-frente.jpg" alt="Camisa Exclusivist Frontal">
+          </div>
+          <!-- Miniaturas -->
+          <div class="thumbnail-row">
+            <img class="thumb active" src="camisa-cinza-frente.jpg" onclick="changeImage(this, 'camisa-cinza-frente.jpg')" alt="Frente">
+            <img class="thumb" src="camisa-cinza-costas.jpg" onclick="changeImage(this, 'camisa-cinza-costas.jpg')" alt="Costas">
+            <img class="thumb" src="detalhe-gola.jpg" onclick="changeImage(this, 'detalhe-gola.jpg')" alt="Gola">
+            <img class="thumb" src="detalhe-bordado.jpg" onclick="changeImage(this, 'detalhe-bordado.jpg')" alt="Bordado">
+            <img class="thumb" src="modelo-dupla.jpg" onclick="changeImage(this, 'modelo-dupla.jpg')" alt="Modelos">
+            <img class="thumb" src="modelo-cinza.jpg" onclick="changeImage(this, 'modelo-cinza.jpg')" alt="Modelo Cinza">
+            <img class="thumb" src="modelo-branca.jpg" onclick="changeImage(this, 'modelo-branca.jpg')" alt="Modelo Branca">
+          </div>
+        </div>
 
-    <!-- A MÁGICA DO MOBILE: Barra de ação fixa na parte inferior -->
+        <!-- LADO DIREITO: Informações -->
+        <div class="product-info">
+          <h1 class="product-title">Camisa Cropped Exclusivist 1OF1</h1>
+          <p class="product-price">R$ 189,00</p>
+          <div class="product-desc">
+            <p>A união perfeita entre o estilo streetwear e a versatilidade. Detalhes bordados exclusivos na gola e caimento estruturado.</p>
+            <p>Modelo veste tamanho M.</p>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- BARRA MOBILE FIXA -->
     <div class="sticky-cta">
       <select class="size-selector">
         <option value="" disabled selected>Tamanho</option>
@@ -82,7 +93,6 @@
       </select>
       <button class="btn-add-cart">Adicionar ao carrinho</button>
     </div>
-    
   </main>
 
   <footer>

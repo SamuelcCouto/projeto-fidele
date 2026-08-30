@@ -246,10 +246,71 @@ body.light-theme footer {
 }
 
 /* ---------- PÁGINA DE PRODUTO (PDP) ---------- */
+.pdp-section {
+  position: relative; 
+  z-index: 5; /* Garante que fique acima do fundo geral */
+}
+
 .pdp-main {
   max-width: 1180px; margin: 0 auto; padding: 20px 24px 120px;
   display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px;
 }
+@media (max-width: 900px) {
+  .pdp-main { grid-template-columns: 1fr; padding: 0 24px 120px; gap: 24px; }
+}
+
+/* O "Escudo" branco que bloqueia os FDLs */
+.product-gallery {
+  background: #FFFFFF; border-radius: 16px; padding: 20px;
+  position: relative; 
+  z-index: 10; /* A MÁGICA: Bloqueia a chuva de logos que está no z-index 2 */
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4); 
+}
+@media (max-width: 900px) {
+  /* Respiro interno no mobile para a foto não colar na borda da tela */
+  .product-gallery { border-radius: 12px; padding: 12px; }
+}
+
+/* Correção da foto explodindo no celular */
+.main-image-container img {
+  width: 100%; height: auto; max-height: 65vh; /* Limita a altura máxima na tela */
+  display: block; border-radius: 8px; object-fit: contain; background: #FFFFFF;
+}
+
+/* Carrossel de Miniaturas */
+.thumbnail-row {
+  display: flex; gap: 12px; margin-top: 16px; overflow-x: auto; padding-bottom: 8px;
+}
+.thumb {
+  width: 70px; height: 70px; object-fit: cover; border-radius: 8px;
+  cursor: pointer; border: 2px solid transparent; transition: 0.2s; flex: 0 0 auto;
+}
+.thumb.active { border-color: var(--pink); }
+
+/* Textos do Produto */
+.product-info { padding: 10px 0; position: relative; z-index: 10; }
+.product-title { font-size: clamp(24px, 4vw, 32px); margin: 0 0 10px; font-weight: 800; color: var(--cream); }
+.product-price { font-family: 'Space Mono', monospace; font-size: 24px; color: var(--pink); margin: 0 0 24px; font-weight: 700; }
+.product-desc { font-size: 15px; line-height: 1.6; opacity: 0.85; margin-bottom: 30px; }
+
+/* ---------- STICKY CTA (BARRA INFERIOR MOBILE) ---------- */
+.sticky-cta {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(10,10,12, 0.95); backdrop-filter: blur(10px);
+  padding: 16px 24px; display: flex; gap: 12px;
+  border-top: 1px solid var(--line); box-shadow: 0 -4px 20px rgba(0,0,0,0.5);
+}
+.size-selector {
+  background: var(--bg-elev); border: 1px solid var(--line); color: var(--cream);
+  font-family: 'Space Mono', monospace; font-size: 14px; font-weight: 700;
+  padding: 0 16px; border-radius: 8px; outline: none; width: 110px; cursor: pointer;
+}
+.btn-add-cart {
+  flex: 1; background: var(--pink); color: #0A0A0C; font-weight: 800; font-size: 13px;
+  text-transform: uppercase; padding: 16px; border-radius: 8px; border: none;
+  cursor: pointer; box-shadow: var(--glow); transition: 0.2s;
+}
+.btn-add-cart:active { transform: scale(0.98); }
 @media (max-width: 900px) {
   .pdp-main { grid-template-columns: 1fr; padding: 0 0 120px 0; gap: 20px; }
 }
