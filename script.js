@@ -10,8 +10,6 @@ function buildField(){
     
     const area = w * h;
     
-    // 1. AUMENTAMOS A DENSIDADE: O divisor caiu para 8000 e o mínimo subiu para 150.
-    // Isso garante que a tela fique mais preenchida, forçando várias logos no centro.
     const count = Math.min(600, Math.max(150, Math.round(area / 8000)));
     
     for(let i=0; i<count; i++){
@@ -24,10 +22,7 @@ function buildField(){
       const top = Math.random() * 100;
       const left = Math.random() * 100;
       
-      // 2. AUMENTAMOS A OPACIDADE: Agora eles vão de 15% até 40% de visibilidade.
-      // Forte o suficiente para aparecer na foto, mas transparente o suficiente para não ofuscar.
       const op = (0.15 + Math.random() * 0.25).toFixed(2);
-      
       const dur = (6 + Math.random() * 10).toFixed(1);
       const delay = (Math.random() * 6).toFixed(1);
       
@@ -81,25 +76,11 @@ function toggleTheme() {
   const body = document.body;
   const themeBtn = document.querySelector('.theme-toggle');
   
-  // Liga ou desliga a classe light-theme no body
   body.classList.toggle('light-theme');
   
-  // Troca o ícone do botão
   if (body.classList.contains('light-theme')) {
-    themeBtn.textContent = '🌙'; // Se estiver claro, mostra a lua
+    themeBtn.textContent = '🌙'; 
   } else {
-    themeBtn.textContent = '☀️'; // Se estiver escuro, mostra o sol
+    themeBtn.textContent = '☀️'; 
   }
-}
-
-/* ---------- Troca de Imagem na Galeria de Produto ---------- */
-function changeImage(element, src) {
-  // Troca a foto principal
-  document.getElementById('mainImage').src = src;
-  
-  // Remove a bordinha rosa de todas as miniaturas
-  document.querySelectorAll('.thumb').forEach(th => th.classList.remove('active'));
-  
-  // Adiciona a bordinha rosa só na miniatura que foi clicada
-  element.classList.add('active');
 }
