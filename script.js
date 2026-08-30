@@ -91,3 +91,15 @@ function toggleTheme() {
     themeBtn.textContent = '☀️'; // Se estiver escuro, mostra o sol
   }
 }
+
+/* ---------- Troca de Imagem na Galeria de Produto ---------- */
+function changeImage(element, src) {
+  // Troca a foto principal
+  document.getElementById('mainImage').src = src;
+  
+  // Remove a bordinha rosa de todas as miniaturas
+  document.querySelectorAll('.thumb').forEach(th => th.classList.remove('active'));
+  
+  // Adiciona a bordinha rosa só na miniatura que foi clicada
+  element.classList.add('active');
+}
