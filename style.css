@@ -64,7 +64,9 @@ header{
 }
 .brand{display:flex;align-items:center;gap:12px;}
 .brand-name img {
-  height: 32px; filter: drop-shadow(0 0 4px rgba(255,31,141,.3)); object-fit: contain;
+  height: 48px; /* Aumentamos de 32px para 48px */
+  filter: drop-shadow(0 0 4px rgba(255,31,141,.3)); 
+  object-fit: contain;
 }
 
 nav.links{display:flex;gap:28px;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.05em;}
@@ -86,14 +88,19 @@ nav.links a:hover{opacity:1;color:var(--pink-soft);}
 @media (max-width:820px){ nav.links{display:none;} .burger{display:flex;} }
 
 /* ---------- HERO (NOVA CAPA) ---------- */
-.hero{padding:40px 24px 64px;position:relative; z-index: 1;}
-.hero::before{
-  content:"";position:absolute;top:-10%;right:5%;width:520px;height:520px;
-  background:radial-gradient(circle, rgba(255,31,141,.16), transparent 70%); z-index:-1;
+.hero {
+  padding: 0 0 64px; /* Zeramos o padding lateral e superior para a foto colar nas bordas! */
+  position: relative; 
+  z-index: 1;
+}
+
+.hero::before {
+  content: ""; position: absolute; top: -10%; right: 5%; width: 520px; height: 520px;
+  background: radial-gradient(circle, rgba(255,31,141,.16), transparent 70%); z-index: -1;
 }
 
 .hero-inner {
-  max-width: 1180px;
+  width: 100%; /* Trocamos o limite de 1180px para 100% da tela */
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -111,16 +118,24 @@ nav.links a:hover{opacity:1;color:var(--pink-soft);}
 .hero-cover img {
   width: 100%;
   height: auto;
-  max-height: 65vh; 
+  min-height: 55vh; /* O Segredo do Mobile: Garante uma altura mínima bem imersiva */
+  max-height: 70vh; 
   display: block;
-  object-fit: cover; 
-  object-position: center;
+  object-fit: cover; /* A lente inteligente que estica sem distorcer o rosto */
+  object-position: center top; /* Foca nos rostos das modelos */
   opacity: 0.45; 
   -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
   mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
 }
 
-.hero-sub{font-family:'Caveat',cursive;font-size:26px;font-weight:700;color:var(--pink-soft);margin:0 0 26px;max-width:90%;}
+.hero-sub {
+  font-family: 'Caveat', cursive;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--pink-soft);
+  margin: 0 24px 26px; /* Protege o texto para não encostar nas bordas laterais */
+  max-width: 90%;
+}
 
 /* ---------- TEMA CLARO ---------- */
 body.light-theme {
