@@ -64,7 +64,7 @@ header{
 }
 .brand{display:flex;align-items:center;gap:12px;}
 .brand-name img {
-  height: 48px; /* Aumentamos de 32px para 48px */
+  height: 70px; /* Aumentamos de 32px para 48px */
   filter: drop-shadow(0 0 4px rgba(255,31,141,.3)); 
   object-fit: contain;
 }
@@ -251,7 +251,7 @@ footer{background:#060607;border-top:1px solid var(--line);margin-top:40px;}
   
   /* 1. Logo FDL maior no cabeçalho (mas sem espremer os botões) */
   .brand-name img {
-    height: 42px !important; 
+    height: 60px !important; 
   }
 
   /* 2. Zero espaços nas laterais: a foto cola de ponta a ponta na tela */
