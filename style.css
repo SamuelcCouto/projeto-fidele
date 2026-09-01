@@ -386,6 +386,8 @@ body.light-theme footer {
   margin: 0 auto;
   position: relative;
   z-index: 10;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .pdp-lus-main {
@@ -396,12 +398,17 @@ body.light-theme footer {
   border: 1px solid var(--line);
   padding: 32px;
   border-radius: 16px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 /* Galeria */
 .pdp-gallery {
   display: flex;
   gap: 16px;
+  min-width: 0; /* A MÁGICA 1: Impede que as miniaturas estiquem o site */
+  max-width: 100%;
 }
 
 .pdp-thumbnails {
@@ -409,6 +416,7 @@ body.light-theme footer {
   flex-direction: column;
   gap: 12px;
   width: 80px;
+  min-width: 80px;
 }
 
 .pdp-thumbnails img {
@@ -423,12 +431,24 @@ body.light-theme footer {
 }
 .pdp-thumbnails img.active { border-color: var(--pink); }
 
-.pdp-main-image { flex: 1; }
-.pdp-main-image img { width: 100%; border-radius: 12px; background: #FFF; aspect-ratio: 4/5; object-fit: cover; }
+.pdp-main-image { 
+  flex: 1; 
+  min-width: 0; /* A MÁGICA 2: Impede que a foto grande estique o site */
+  max-width: 100%;
+}
+.pdp-main-image img { 
+  width: 100%; 
+  max-width: 100%;
+  border-radius: 12px; 
+  background: #FFF; 
+  aspect-ratio: 4/5; 
+  object-fit: cover; 
+  display: block;
+}
 
 /* Informações */
-.pdp-info { display: flex; flex-direction: column; }
-.pdp-title { font-size: 32px; font-weight: 500; color: var(--cream); margin: 0 0 16px; font-family: 'Space Mono', monospace; }
+.pdp-info { display: flex; flex-direction: column; min-width: 0; }
+.pdp-title { font-size: clamp(24px, 4vw, 32px); font-weight: 500; color: var(--cream); margin: 0 0 16px; font-family: 'Space Mono', monospace; line-height: 1.2; }
 .pdp-price { font-size: 24px; font-weight: 800; color: var(--pink-soft); margin: 0 0 4px; }
 .pdp-installments { font-size: 13px; color: var(--cream); opacity: 0.7; margin-bottom: 32px; }
 
@@ -436,7 +456,7 @@ body.light-theme footer {
 .pdp-details strong { color: var(--pink-soft); }
 
 .pdp-sizes p { font-size: 14px; margin-bottom: 12px; color: var(--cream); }
-.size-options { display: flex; gap: 12px; margin-bottom: 40px; }
+.size-options { display: flex; gap: 12px; margin-bottom: 40px; flex-wrap: wrap; }
 .size-btn {
   width: 44px; height: 44px; border-radius: 50%;
   border: 1px solid var(--line); background: transparent;
@@ -453,11 +473,22 @@ body.light-theme footer {
 }
 .buy-btn-large:active { transform: scale(0.98); }
 
-/* Ajustes para o Mobile */
+/* Ajustes para o Mobile da Página de Produto */
 @media (max-width: 900px) {
-  .pdp-lus-section { padding: 24px 16px 80px; }
+  .pdp-lus-section { padding: 16px 16px 80px; }
   .pdp-lus-main { grid-template-columns: 1fr; gap: 24px; padding: 16px; }
   .pdp-gallery { flex-direction: column-reverse; } /* Inverte para a foto grande ficar em cima */
-  .pdp-thumbnails { flex-direction: row; width: 100%; overflow-x: auto; padding-bottom: 8px; }
+  .pdp-thumbnails { 
+    flex-direction: row; 
+    width: 100%; 
+    overflow-x: auto; 
+    padding-bottom: 8px; 
+    -webkit-overflow-scrolling: touch; 
+  }
   .pdp-thumbnails img { width: 70px; flex: 0 0 auto; }
+  
+  .pdp-main-image img { 
+    max-height: 60vh; /* A MÁGICA 3: Trava a altura no celular para não engolir a tela inteira */
+    object-fit: contain; /* Garante que a foto inteira caiba dentro do container sem cortar as bordas */
+  }
 }
