@@ -50,7 +50,9 @@ a{color:inherit;text-decoration:none;}
   50%{ transform:translateY(-22px) rotate(var(--rot)); }
 }
 
-main, header, footer{position:relative;z-index:1;}
+/* Tiramos o main da mesma camada do rodapé para liberar as profundidades! */
+header, footer { position: relative; z-index: 1; }
+main { position: relative; }
 
 /* ---------- HEADER ---------- */
 header{
