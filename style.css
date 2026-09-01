@@ -417,6 +417,18 @@ body.light-theme footer {
   gap: 12px;
   width: 80px;
   min-width: 80px;
+  max-height: 600px; /* Trava a altura máxima no PC */
+  overflow-y: auto; /* Cria a rolagem vertical se passar de 600px */
+  padding-right: 4px; /* Dá um respiro para a barra de rolagem */
+}
+
+/* Deixando a barra de rolagem no PC com o estilo da loja */
+.pdp-thumbnails::-webkit-scrollbar {
+  width: 4px;
+}
+.pdp-thumbnails::-webkit-scrollbar-thumb {
+  background: var(--line);
+  border-radius: 4px;
 }
 
 .pdp-thumbnails img {
@@ -429,8 +441,8 @@ body.light-theme footer {
   background: #FFF;
   transition: 0.2s;
 }
-.pdp-thumbnails img.active { border-color: var(--pink); }
 
+.pdp-thumbnails img.active { border-color: var(--pink); }
 .pdp-main-image { 
   flex: 1; 
   min-width: 0; /* A MÁGICA 2: Impede que a foto grande estique o site */
