@@ -10,8 +10,10 @@
 </head>
 <body>
 
+  <!-- CHUVA NEON FDL -->
   <div class="bg-field" id="bgField"></div>
 
+  <!-- CABEÇALHO -->
   <header>
     <div class="nav-row">
       <div class="brand">
@@ -29,16 +31,13 @@
       <div class="nav-icons">
         <div class="icon-btn burger">☰</div>
         <div class="icon-btn">🔎</div>
-        
-        <!-- Botão de trocar tema -->
         <div class="icon-btn theme-toggle" onclick="toggleTheme()">☀️</div>
-        
         <div class="icon-btn cart" onclick="toggleCart()">🛍<span class="cart-count">2</span></div>
       </div>
     </div>
-</header>
+  </header>
 
-  <!-- FAIXA PROMO (Inspirada no site de referência) -->
+  <!-- FAIXA PROMO -->
   <div class="promo-bar">
     <span>💳 3x SEM JUROS NO CARTÃO</span>
     <span>•</span>
@@ -46,7 +45,6 @@
   </div>
 
   <main>
-    <!-- O BANNER DAS MENINAS CONTINUA AQUI... -->
     <!-- BANNER DAS MENINAS NO TOPO -->
     <section class="hero">
       <div class="hero-inner">
@@ -57,51 +55,85 @@
       </div>
     </section>
 
-    <!-- PÁGINA DO PRODUTO (PDP) -->
-<!-- NOVA VITRINE (2 Produtos por linha no Mobile) -->
-    <div class="section-title">
+    <!-- TÍTULO E FILTROS -->
+    <div class="section-title centered">
       <h2>Mais <span>Desejados</span></h2>
     </div>
+    
+    <div class="category-pills">
+      <button class="pill active">Parte de cima</button>
+      <button class="pill">Parte de baixo</button>
+      <button class="pill">Fitness</button>
+    </div>
 
-    <div class="home-carousel">
-      <!-- Produto 1 -->
-      <div class="card">
-        <div class="thumb">
-          <img src="camisa-cinza-frente.jpg" alt="Camisa Exclusivist">
+    <!-- NOVA GRADE DE PRODUTOS (5 no PC, 2 no Mobile) -->
+    <div class="product-grid">
+      
+<!-- Produto 1 -->
+      <div class="product-card">
+        <div class="product-thumb">
+          <!-- A tag <a> simula o clique que levará para a tela de detalhes -->
+          <a href="#">
+            <img src="regatabranca.jpg" alt="Regata Orvalho Branca">
+          </a>
         </div>
-        <div class="info">
-          <p class="name">Camisa Cropped Exclusivist 1OF1</p>
-          <p class="price">R$ 189,00</p>
-          <button class="add-btn">Comprar</button>
+        <div class="product-info">
+          <p class="product-name">Regata Orvalho</p>
+          <p class="product-price">R$ 130,00</p>
+          <button class="buy-btn">Comprar</button>
         </div>
       </div>
 
       <!-- Produto 2 -->
-      <div class="card">
-        <div class="thumb">
-          <img src="detalhe-gola.jpg" alt="Gola">
+      <div class="product-card">
+        <div class="product-thumb">
+          <img src="produto-2.jpg" alt="Produto 2">
         </div>
-        <div class="info">
-          <p class="name">Gola Avulsa FDL</p>
-          <p class="price">R$ 59,90</p>
-          <button class="add-btn">Comprar</button>
+        <div class="product-info">
+          <p class="product-name">Regata Costas Abertas</p>
+          <p class="product-price">R$ 149,90</p>
+          <button class="buy-btn">Comprar</button>
         </div>
       </div>
 
       <!-- Produto 3 -->
-      <div class="card">
-        <div class="thumb">
-          <img src="camisa-cinza-costas.jpg" alt="Costas">
+      <div class="product-card">
+        <div class="product-thumb">
+          <img src="produto-3.jpg" alt="Produto 3">
         </div>
-        <div class="info">
-          <p class="name">Regata Off White Keep On Running</p>
-          <p class="price">R$ 129,00</p>
-          <button class="add-btn">Comprar</button>
+        <div class="product-info">
+          <p class="product-name">Blusa Alcinha Decote V</p>
+          <p class="product-price">R$ 69,90</p>
+          <button class="buy-btn">Comprar</button>
+        </div>
+      </div>
+
+      <!-- Produto 4 -->
+      <div class="product-card">
+        <div class="product-thumb">
+          <img src="produto-4.jpg" alt="Produto 4">
+        </div>
+        <div class="product-info">
+          <p class="product-name">Blusa Decote V Manga</p>
+          <p class="product-price">R$ 109,90</p>
+          <button class="buy-btn">Comprar</button>
+        </div>
+      </div>
+
+      <!-- Produto 5 -->
+      <div class="product-card">
+        <div class="product-thumb">
+          <img src="produto-5.jpg" alt="Produto 5">
+        </div>
+        <div class="product-info">
+          <p class="product-name">Blusa Corset Trançada</p>
+          <p class="product-price">R$ 99,90</p>
+          <button class="buy-btn">Comprar</button>
         </div>
       </div>
     </div>
 
-    <!-- SEÇÃO QUEM SOMOS (Inspirada no vídeo) -->
+    <!-- SEÇÃO QUEM SOMOS -->
     <section class="about-section">
       <h3>Você já conhece a <span>FIDÈLE?</span></h3>
       <div class="about-content">
@@ -110,16 +142,6 @@
       </div>
     </section>
 
-    <!-- BARRA MOBILE FIXA -->
-    <div class="sticky-cta">
-      <select class="size-selector">
-        <option value="" disabled selected>Tamanho</option>
-        <option value="p">P</option>
-        <option value="m">M</option>
-        <option value="g">G</option>
-      </select>
-      <button class="btn-add-cart">Adicionar ao carrinho</button>
-    </div>
   </main>
 
   <footer>

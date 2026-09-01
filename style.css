@@ -159,89 +159,117 @@ nav.links a:hover{opacity:1;color:var(--pink-soft);}
   max-width: 90%;
 }
 
-/* ---------- TÍTULO DA SEÇÃO ---------- */
-.section-title {
-  display: flex; align-items: baseline; justify-content: space-between;
-  padding: 48px 24px 16px; max-width: 1180px; margin: 0 auto; flex-wrap: wrap; gap: 10px;
-  position: relative; z-index: 10;
-}
-.section-title h2 { font-family: 'Titan One', cursive; font-size: 28px; margin: 0; color: var(--cream); }
-.section-title h2 span { color: var(--pink); filter: drop-shadow(0 0 10px rgba(255,31,141,.4)); }
-
-/* ---------- VITRINE HOME (CARROSSEL MOBILE) ---------- */
-.home-carousel {
+/* ---------- TÍTULO CENTRALIZADO E FILTROS ---------- */
+.section-title.centered {
   display: flex;
-  gap: 12px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding: 0 24px 40px;
-  -webkit-overflow-scrolling: touch;
+  justify-content: center;
+  text-align: center;
+  padding: 64px 24px 24px;
+  max-width: 1180px;
+  margin: 0 auto;
   position: relative;
   z-index: 10;
 }
-.home-carousel::-webkit-scrollbar { display: none; }
+.section-title.centered h2 { font-family: 'Titan One', cursive; font-size: 28px; margin: 0; color: var(--cream); }
+.section-title.centered h2 span { color: var(--pink); filter: drop-shadow(0 0 10px rgba(255,31,141,.4)); }
 
-.home-carousel .card {
-  flex: 0 0 calc(50% - 6px); /* A MÁGICA: Coloca exatamente 2 cards na tela do celular */
-  scroll-snap-align: start;
-  background: var(--bg-elev);
-  border-radius: 12px;
-  padding: 10px;
+.category-pills {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  padding: 0 24px 32px;
+  max-width: 1180px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.category-pills::-webkit-scrollbar { display: none; }
+
+.pill {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--cream);
+  padding: 8px 20px;
+  border-radius: 99px;
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: 0.2s;
+}
+.pill.active {
+  background: var(--pink);
+  color: #0A0A0C;
+  border-color: var(--pink);
+  box-shadow: var(--glow);
+}
+
+/* ---------- GRID DE PRODUTOS (5 no PC, 2 no Mobile) ---------- */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 colunas cravadas no Desktop */
+  gap: 20px;
+  padding: 0 24px 64px;
+  max-width: 1180px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+.product-card {
   display: flex;
   flex-direction: column;
-  border: 1px solid var(--line);
-  position: relative;
-}
-@media (min-width: 900px) {
-  .home-carousel .card { flex: 0 0 calc(25% - 12px); } /* No PC, 4 por linha */
 }
 
-.home-carousel .thumb img {
+.product-thumb img {
   width: 100%;
   aspect-ratio: 4/5;
   object-fit: cover;
-  border-radius: 8px;
-  background: #FFF;
+  border-radius: 12px; 
+  background: #FFF; 
 }
 
-.home-carousel .info {
-  flex: 1;
+.product-info {
   display: flex;
   flex-direction: column;
   margin-top: 12px;
+  flex: 1;
 }
 
-.home-carousel .name {
-  font-size: 12px;
-  font-weight: 700;
+.product-name {
+  font-size: 13px;
+  font-weight: 500;
   color: var(--cream);
   margin: 0 0 6px;
-  line-height: 1.3;
+  line-height: 1.4;
 }
 
-.home-carousel .price {
+.product-price {
   font-family: 'Space Mono', monospace;
-  color: var(--pink-soft);
-  font-weight: 700;
+  color: var(--cream);
+  font-weight: 800;
   font-size: 15px;
   margin: 0 0 16px;
 }
 
-.home-carousel .add-btn {
+.buy-btn {
   margin-top: auto;
   width: 100%;
-  background: #25D366; 
+  background: #64C47A; /* Verde suave da referência */
   color: #FFF;
   border: none;
   padding: 12px;
   font-weight: 800;
-  font-size: 12px;
-  text-transform: uppercase;
-  border-radius: 6px;
+  font-size: 13px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: transform 0.1s;
+  transition: transform 0.1s, filter 0.2s;
 }
-.home-carousel .add-btn:active { transform: scale(0.96); }
+.buy-btn:active { transform: scale(0.96); }
+.buy-btn:hover { filter: brightness(1.1); }
 
 /* ---------- SEÇÃO QUEM SOMOS ---------- */
 .about-section {
@@ -342,5 +370,12 @@ body.light-theme footer {
     max-width: 100% !important;
     padding: 0 20px !important;
     margin: 16px 0 0 0 !important;
+  }
+
+  /* 5. A regra que quebra a vitrine de 5 pra 2 colunas na tela pequena */
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+    padding: 0 16px 40px !important; 
   }
 }
