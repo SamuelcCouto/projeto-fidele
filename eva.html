@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regata Eva - FIDÈLE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Titan+One&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- CHUVA NEON FDL -->
+  <div class="bg-field" id="bgField"></div>
+
+  <!-- CABEÇALHO -->
+  <header>
+    <div class="nav-row">
+      <div class="brand">
+        <div class="brand-name">
+          <a href="index.html">
+            <img src="Fidele-logocabecalho.png" alt="FIDÈLE">
+          </a>
+        </div>
+      </div>
+      <div class="nav-icons">
+        <div class="icon-btn burger">☰</div>
+        <div class="icon-btn theme-toggle" onclick="toggleTheme()">☀️</div>
+        <div class="icon-btn cart" onclick="toggleCart()">🛍<span class="cart-count">2</span></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- LAYOUT DA PÁGINA DO PRODUTO -->
+    <section class="pdp-lus-section">
+      <div class="pdp-lus-main">
+        
+        <!-- ESQUERDA: Galeria de Fotos -->
+        <div class="pdp-gallery">
+          <!-- As 8 miniaturas exclusivas deste produto -->
+          <div class="pdp-thumbnails">
+            <img src="eva1.jpg" class="thumb active" onclick="changeImage(this, 'eva1.jpg')">
+            <img src="eva2.jpg" class="thumb" onclick="changeImage(this, 'eva2.jpg')">
+            <img src="eva3.jpg" class="thumb" onclick="changeImage(this, 'eva3.jpg')">
+            <img src="eva4.jpg" class="thumb" onclick="changeImage(this, 'eva4.jpg')">
+            <img src="eva5.jpg" class="thumb" onclick="changeImage(this, 'eva5.jpg')">
+            <img src="eva6.jpg" class="thumb" onclick="changeImage(this, 'eva6.jpg')">
+            <img src="eva7.jpg" class="thumb" onclick="changeImage(this, 'eva7.jpg')">
+            <img src="eva8.jpg" class="thumb" onclick="changeImage(this, 'eva8.jpg')">
+          </div>
+          
+          <!-- Foto Principal Grande -->
+          <div class="pdp-main-image">
+            <img id="mainImage" src="eva1.jpg" alt="Regata Eva">
+          </div>
+        </div>
+
+        <!-- DIREITA: Informações e Compra -->
+        <div class="pdp-info">
+          <h1 class="pdp-title">Regata Eva</h1>
+          <p class="pdp-price">R$ 100,00</p>
+          <p class="pdp-installments">ou 3x de R$ 33,33 sem juros</p>
+
+          <div class="pdp-details">
+            <p><strong>Modelo:</strong> Regata Eva</p>
+            <p><strong>Cores disponíveis:</strong> Preto, cinza, bege e terracota</p>
+            <br>
+            <p>Uma peça essencial que une conforto e versatilidade para o seu dia a dia.</p>
+          </div>
+
+          <div class="pdp-sizes">
+            <p>Tamanho:</p>
+            <div class="size-options">
+              <button class="size-btn">P</button>
+              <button class="size-btn">M</button>
+              <button class="size-btn">G</button>
+              <button class="size-btn">GG</button>
+            </div>
+          </div>
+
+          <button class="buy-btn-large">Comprar</button>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer>
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">FIDÈLE</div>
+        <p style="font-size:13px;line-height:1.6;max-width:260px;opacity:.8;">Peças com atitude, embaladas com carinho. Seja leal a você mesma.</p>
+        <div class="newsletter"><input placeholder="seu@email.com"><button>Entrar</button></div>
+      </div>
+      <div>
+        <h4>Loja</h4>
+        <ul><li><a href="#">Tanks</a></li><li><a href="#">Camisetas</a></li><li><a href="#">Bags</a></li><li><a href="#">Lançamentos</a></li></ul>
+      </div>
+      <div>
+        <h4>Ajuda</h4>
+        <ul><li><a href="#">Trocas e devoluções</a></li><li><a href="#">Prazo de entrega</a></li><li><a href="#">Guia de tamanhos</a></li><li><a href="#">Fale conosco</a></li></ul>
+      </div>
+      <div>
+        <h4>Pagamento</h4>
+        <div class="pay-icons"><span>PIX</span><span>VISA</span><span>MASTER</span><span>ELO</span><span>3x sem juros</span></div>
+        <h4 style="margin-top:18px;">Segue a Fidèle</h4>
+        <div class="pay-icons"><span>@fideleoficial</span></div>
+      </div>
+    </div>
+    <div class="bottom-bar">© 2026 FIDÈLE — todos os direitos reservados</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
