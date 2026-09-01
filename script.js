@@ -90,3 +90,25 @@ function changeImage(element, src) {
   document.querySelectorAll('.thumb').forEach(th => th.classList.remove('active'));
   element.classList.add('active');
 }
+/* ---------- Animação Sutil da Logo FDL (Cabeçalho) ---------- */
+const headerLogo = document.querySelector('.brand-name img');
+
+if (headerLogo) {
+  let angle = 0;
+  
+  function animateLogo() {
+    angle += 0.03; // Controla a velocidade (quanto menor, mais suave)
+    
+    // Seno e Cosseno criam um movimento de vai e vem infinito
+    const y = Math.sin(angle) * 3; // Flutua 3 pixels para cima e para baixo
+    const rot = Math.cos(angle) * 2; // Rotaciona 2 graus para os lados
+    
+    headerLogo.style.transform = `translateY(${y}px) rotate(${rot}deg)`;
+    
+    // Chama a si mesma no próximo quadro de animação da tela (super leve)
+    requestAnimationFrame(animateLogo); 
+  }
+  
+  // Dispara a mágica
+  animateLogo();
+}

@@ -255,10 +255,11 @@ nav.links a:hover{opacity:1;color:var(--pink-soft);}
   margin: 0 0 16px;
 }
 
+/* Botão da Vitrine */
 .buy-btn {
   margin-top: auto;
   width: 100%;
-  background: #64C47A; /* Verde suave da referência */
+  background: #D92579; /* Rosa elegante que combina com a estética dark */
   color: #FFF;
   border: none;
   padding: 12px;
@@ -477,11 +478,19 @@ body.light-theme footer {
 }
 .size-btn:hover, .size-btn:focus { border-color: var(--pink); color: var(--pink); }
 
+/* Botão grande da página de detalhes do produto */
 .buy-btn-large {
-  width: 100%; background: #64C47A; color: #FFF;
-  border: none; padding: 16px; font-weight: 800;
-  font-size: 16px; border-radius: 8px; cursor: pointer;
-  text-transform: uppercase; transition: 0.2s;
+  width: 100%; 
+  background: #D92579; /* O mesmo rosa aplicado na página interna */
+  color: #FFF;
+  border: none; 
+  padding: 16px; 
+  font-weight: 800;
+  font-size: 16px; 
+  border-radius: 8px; 
+  cursor: pointer;
+  text-transform: uppercase; 
+  transition: 0.2s;
 }
 .buy-btn-large:active { transform: scale(0.98); }
 
