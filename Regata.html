@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regata Orvalho - FIDÈLE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Titan+One&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- CHUVA NEON FDL -->
+  <div class="bg-field" id="bgField"></div>
+
+  <!-- CABEÇALHO -->
+  <header>
+    <div class="nav-row">
+      <div class="brand">
+        <div class="brand-name">
+          <a href="index.html">
+            <img src="Fidele-logocabecalho.png" alt="FIDÈLE">
+          </a>
+        </div>
+      </div>
+      <div class="nav-icons">
+        <div class="icon-btn burger">☰</div>
+        <div class="icon-btn theme-toggle" onclick="toggleTheme()">☀️</div>
+        <div class="icon-btn cart" onclick="toggleCart()">🛍<span class="cart-count">2</span></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- LAYOUT DA PÁGINA DO PRODUTO -->
+    <section class="pdp-lus-section">
+      <div class="pdp-lus-main">
+        
+        <!-- ESQUERDA: Galeria de Fotos -->
+        <div class="pdp-gallery">
+          <!-- As 8 miniaturas (1 principal + 7 novas) -->
+          <div class="pdp-thumbnails">
+            <img src="regatabranca.jpg" class="thumb active" onclick="changeImage(this, 'regatabranca.jpg')">
+            <img src="regata1.jpg" class="thumb" onclick="changeImage(this, 'regata1.jpg')">
+            <img src="regata2.jpg" class="thumb" onclick="changeImage(this, 'regata2.jpg')">
+            <img src="regata3.jpg" class="thumb" onclick="changeImage(this, 'regata3.jpg')">
+            <img src="regata4.jpg" class="thumb" onclick="changeImage(this, 'regata4.jpg')">
+            <img src="regata5.jpg" class="thumb" onclick="changeImage(this, 'regata5.jpg')">
+            <img src="regata6.jpg" class="thumb" onclick="changeImage(this, 'regata6.jpg')">
+            <img src="regata7.jpg" class="thumb" onclick="changeImage(this, 'regata7.jpg')">
+          </div>
+          
+          <!-- Foto Principal Grande -->
+          <div class="pdp-main-image">
+            <img id="mainImage" src="regatabranca.jpg" alt="Regata Orvalho">
+          </div>
+        </div>
+
+        <!-- DIREITA: Informações e Compra -->
+        <div class="pdp-info">
+          <h1 class="pdp-title">Regata Orvalho</h1>
+          <p class="pdp-price">R$ 130,00</p>
+          <p class="pdp-installments">ou 3x de R$ 43,33 sem juros</p>
+
+          <div class="pdp-details">
+            <p><strong>Cor:</strong> Branco</p>
+            <p><strong>Modelo:</strong> Regata orvalho</p>
+          </div>
+
+          <div class="pdp-sizes">
+            <p>Tamanho:</p>
+            <div class="size-options">
+              <button class="size-btn">P</button>
+              <button class="size-btn">M</button>
+              <button class="size-btn">G</button>
+              <button class="size-btn">GG</button>
+            </div>
+          </div>
+
+          <button class="buy-btn-large">Comprar</button>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

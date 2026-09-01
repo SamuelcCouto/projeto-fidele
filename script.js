@@ -84,3 +84,9 @@ function toggleTheme() {
     themeBtn.textContent = '☀️'; 
   }
 }
+/* ---------- Troca de Imagem na Galeria de Produto ---------- */
+function changeImage(element, src) {
+  document.getElementById('mainImage').src = src;
+  document.querySelectorAll('.thumb').forEach(th => th.classList.remove('active'));
+  element.classList.add('active');
+}

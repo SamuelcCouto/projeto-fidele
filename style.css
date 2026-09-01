@@ -379,3 +379,85 @@ body.light-theme footer {
     padding: 0 16px 40px !important; 
   }
 }
+/* ---------- NOVA PÁGINA DE PRODUTO (Estilo Lus Store) ---------- */
+.pdp-lus-section {
+  padding: 40px 24px 80px;
+  max-width: 1180px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+.pdp-lus-main {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  padding: 32px;
+  border-radius: 16px;
+}
+
+/* Galeria */
+.pdp-gallery {
+  display: flex;
+  gap: 16px;
+}
+
+.pdp-thumbnails {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 80px;
+}
+
+.pdp-thumbnails img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  background: #FFF;
+  transition: 0.2s;
+}
+.pdp-thumbnails img.active { border-color: var(--pink); }
+
+.pdp-main-image { flex: 1; }
+.pdp-main-image img { width: 100%; border-radius: 12px; background: #FFF; aspect-ratio: 4/5; object-fit: cover; }
+
+/* Informações */
+.pdp-info { display: flex; flex-direction: column; }
+.pdp-title { font-size: 32px; font-weight: 500; color: var(--cream); margin: 0 0 16px; font-family: 'Space Mono', monospace; }
+.pdp-price { font-size: 24px; font-weight: 800; color: var(--pink-soft); margin: 0 0 4px; }
+.pdp-installments { font-size: 13px; color: var(--cream); opacity: 0.7; margin-bottom: 32px; }
+
+.pdp-details { margin-bottom: 32px; font-size: 14px; line-height: 1.8; color: var(--cream); opacity: 0.9; }
+.pdp-details strong { color: var(--pink-soft); }
+
+.pdp-sizes p { font-size: 14px; margin-bottom: 12px; color: var(--cream); }
+.size-options { display: flex; gap: 12px; margin-bottom: 40px; }
+.size-btn {
+  width: 44px; height: 44px; border-radius: 50%;
+  border: 1px solid var(--line); background: transparent;
+  color: var(--cream); font-family: 'Space Mono', monospace;
+  font-weight: 700; font-size: 14px; cursor: pointer; transition: 0.2s;
+}
+.size-btn:hover, .size-btn:focus { border-color: var(--pink); color: var(--pink); }
+
+.buy-btn-large {
+  width: 100%; background: #64C47A; color: #FFF;
+  border: none; padding: 16px; font-weight: 800;
+  font-size: 16px; border-radius: 8px; cursor: pointer;
+  text-transform: uppercase; transition: 0.2s;
+}
+.buy-btn-large:active { transform: scale(0.98); }
+
+/* Ajustes para o Mobile */
+@media (max-width: 900px) {
+  .pdp-lus-section { padding: 24px 16px 80px; }
+  .pdp-lus-main { grid-template-columns: 1fr; gap: 24px; padding: 16px; }
+  .pdp-gallery { flex-direction: column-reverse; } /* Inverte para a foto grande ficar em cima */
+  .pdp-thumbnails { flex-direction: row; width: 100%; overflow-x: auto; padding-bottom: 8px; }
+  .pdp-thumbnails img { width: 70px; flex: 0 0 auto; }
+}
